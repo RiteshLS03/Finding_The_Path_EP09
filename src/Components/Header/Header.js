@@ -2,25 +2,26 @@ import React, { useState } from "react";
 import { logo, vector } from "../../Images/index"; /* Images for UI */
 import "./Header.css";
 import {Link} from "react-router-dom";
+import { Body } from "../Index";
 
 
 function Header () {
   const [isLoggedIn,setIsLoggedIn] = useState("true");
-  const [searchText, setSearchText] = useState(""); //useState is a function that return an array. First Element is state varible and second element is function that how we want to change the state
   return (
     <>
       {/* LOGO */}
       <div className="header">
         <img className="logo" src={logo} alt="logo" />
         {/* SEARCHBAR  */}
-        <div className="search-nav">
+        {/* <div className="search-nav">
           <input
             type="text"
             id="searchbar"
             placeholder="Search, Order, Enjoy!"
             value={searchText}
             onChange={(e) => {
-            var searchingData =  setSearchText(e.target.value);
+             setSearchText(e.target.value);
+             <Body searchText={searchText} /> //passing the data to body comp
             }}
           />
           <button 
@@ -33,8 +34,8 @@ function Header () {
           >
             Search
           </button>
-          {/* NAVBAR */}
-        </div>
+        </div> */}
+        {/* NAVBAR */}
         <li className="nav-items">
           <ul><Link to="/">Home</Link> </ul>
           <ul>Food</ul>

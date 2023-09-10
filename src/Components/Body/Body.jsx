@@ -3,9 +3,19 @@ import { RestaurantCard , ShimmarUI} from "../Index";
 import { SwiggyAPI_URL } from "../config.js";
 import "./Body.css"
 
+
 function Body () {
+
+  function filterData(searchText,allRestaurants){
+    const filterData = allRestaurants.filter((allRestaurants)=>
+    allRestaurants?.info?.name?.toLowerCase()?.includes(searchText?.toLowerCase()));
+    return filterData
+  }
+  
   const [allRestaurants , setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+  const [searchText, setSearchText] = useState(""); //useState is a function that return an array. First Element is state varible and second element is function that how we want to change the state
+
 
   useEffect(()=>{
     getResturants()
@@ -37,13 +47,46 @@ function Body () {
     }
   } 
 
-  return (allRestaurants.length === 0) ? <ShimmarUI /> :  (
-      <div className="body-rest">
-      {filteredRestaurants?.map((restaurant) => {
-        return   <RestaurantCard restaurant={...restaurant} key={restaurant?.info?.id} /*key={restaurant.data.data.id}*/ /> 
-      })}
+  return(
+  (
+      <div className="container">
+        <div className="search-nav">
+          <input
+            type="text"
+            id="searchbar"
+            placeholder="Search, Order, Enjoy!"
+            value={searchText}
+            onChange={(e) => {
+             setSearchText(e.target.value);
+            }}
+          />
+          <button 
+            onClick={() => {
+              // need to filter the data
+              const data = filterData(searchText, allRestaurants);
+              setFilteredRestaurants(data);
+            }}
+          >
+            Search
+          </button>
+        </div>
+
+        {/* CARDS */}
+      <div>
+        {filteredRestaurants?.map((restaurant) => 
+         {
+           return (
+             (allRestaurants.length === 0) ? <ShimmarUI /> :  (
+              <div className="body-rest">
+              <RestaurantCard restaurant={...restaurant} key={restaurant?.info?.id} />
+              </div>
+           ) 
+           )
+          })}
+      </div>
+
     </div> 
-    )
+    ))
   }
 
   export default Body;

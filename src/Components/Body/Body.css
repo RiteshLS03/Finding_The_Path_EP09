@@ -1,9 +1,12 @@
-.body-rest{
-    display: flex;
-    justify-content: space-between ;
-    flex-wrap: wrap;
-    margin: .5rem 6rem;
+.container {
+  display: flex;
+  margin: 1rem;
+  justify-content: center;
 }
 
-
-
+.body-rest {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0.5rem 6rem;
+}
