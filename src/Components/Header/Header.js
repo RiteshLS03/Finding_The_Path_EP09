@@ -3,6 +3,7 @@ import { logo, vector } from "../../Images/index"; /* Images for UI */
 import "./Header.css";
 import {Link} from "react-router-dom";
 import { Body } from "../Index";
+import {Link} from "react-router-dom"
 
 
 function Header () {
@@ -11,7 +12,11 @@ function Header () {
     <>
       {/* LOGO */}
       <div className="header">
-        <img className="logo" src={logo} alt="logo" />
+        <img className="logo" src={logo} alt="logo"> 
+        {/* <Link to="about"></Link> */}
+           </img>
+          {/* <Link to="home"/>
+        <img/> */}
         {/* SEARCHBAR  */}
         {/* <div className="search-nav">
           <input

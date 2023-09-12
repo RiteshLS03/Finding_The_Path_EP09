@@ -1,13 +1,28 @@
 .container {
+  /* display: block; */
+  /* margin: 1rem; */
+  /* padding: auto; */
+  justify-content: center;
+  align-items: center;
+
+}
+
+.search-nav{
   display: flex;
-  margin: 1rem;
+  align-items: center;
   justify-content: center;
 }
 
-.body-rest {
+.cards{
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin: 0.5rem 6rem;
+  margin: auto 8rem;
+  /* padding: 5rem; */
+}
 
+.body-rest{
+  display: inline;
+  justify-content: space-between;
+  margin: 1rem;
 }

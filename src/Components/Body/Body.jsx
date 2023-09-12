@@ -72,11 +72,12 @@ function Body () {
         </div>
 
         {/* CARDS */}
-      <div>
-        {filteredRestaurants?.map((restaurant) => 
+      <div className="cards">
+        {
+     (allRestaurants.length === 0) ? <ShimmarUI /> : filteredRestaurants?.map((restaurant) => 
          {
            return (
-             (allRestaurants.length === 0) ? <ShimmarUI /> :  (
+              (
               <div className="body-rest">
               <RestaurantCard restaurant={...restaurant} key={restaurant?.info?.id} />
               </div>
@@ -84,7 +85,6 @@ function Body () {
            )
           })}
       </div>
-
     </div> 
     ))
   }

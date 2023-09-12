@@ -5,6 +5,10 @@
   margin: 0.5rem 1rem;
 }
 
+.header>img{
+cursor: pointer;
+}
+
 .nav-items {
   margin: 1rem;
   list-style-type: none;

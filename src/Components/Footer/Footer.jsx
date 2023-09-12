@@ -1,8 +1,12 @@
 import React from "react";
+import {AiOutlineHeart} from "react-icons/ai"
+import "./Footer.css"
 
 function Footer(){
     return(     
-           <h1>Footer</h1>
+           <div className="footer">
+           <h2>Made With <AiOutlineHeart /> by Ritesh</h2>
+           </div>
     );
 }
 
