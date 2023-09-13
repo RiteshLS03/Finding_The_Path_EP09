@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { Header, Footer, Body, About, Error } from "./src/Components/Index";
+import { Header, Footer, Body, About, Error , MainRestaurant} from "./src/Components/Index";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom"; // First , Need to push to the repo
 
 function App() {
@@ -27,6 +27,10 @@ const appRouter = createBrowserRouter([
         path: "/about",
         element: <About />,
       },
+      {
+        path:"/restaurant/:id",
+        element: <MainRestaurant />,
+      }
     ],
   },
 ]);
