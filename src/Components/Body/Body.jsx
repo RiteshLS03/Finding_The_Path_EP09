@@ -46,6 +46,8 @@ function Body () {
       console.log(error)
     }
   } 
+  // if(!allRestaurants) return null;
+  const allRestaurantslength = allRestaurants.length
 
   return(
   (
@@ -73,8 +75,8 @@ function Body () {
 
         {/* CARDS */}
       <div className="cards">
-        {
-     (allRestaurants.length === 0) ? <ShimmarUI /> : filteredRestaurants?.map((restaurant) => 
+        {  
+     (allRestaurantslength === 0) ? <ShimmarUI /> : filteredRestaurants?.map((restaurant) => 
          {
            return (
               (

@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import { logo, vector } from "../../Images/index"; /* Images for UI */
-import "./Header.css";
 import {Link} from "react-router-dom";
 import { Body } from "../Index";
-import {Link} from "react-router-dom"
-
+import "./Header.css"
 
 function Header () {
   const [isLoggedIn,setIsLoggedIn] = useState("true");

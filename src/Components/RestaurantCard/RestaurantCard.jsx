@@ -6,7 +6,7 @@ import {AiFillStar} from "react-icons/ai"
 function RestaurantCard({ restaurant }) {
   const { name , costForTwo, cuisines , cloudinaryImageId  , avgRatingString} = restaurant?.info
   return (
-    <div className="card-data">
+    <div className="card-data" id={restaurant?.info?.id} >
       <img
         src={
           IMG_CDN_LINK +
