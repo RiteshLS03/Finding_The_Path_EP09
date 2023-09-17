@@ -1,0 +1,38 @@
+.main_restaurant_restaurant-header {
+  display: flex;
+  justify-content:space-between;
+  margin: 1rem 20rem;
+  /* padding: 1rem 10rem; */
+  font-family: var(--font-family);
+  border-bottom: 1px dashed #d3d3d3;
+
+}
+
+.info_right-box{
+  padding: 5px;
+  border: 0.5px solid black;
+  border-radius: 10px;
+  align-items: center;
+  width: 75px;
+}
+
+.info_right-box > h4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom:10px ;
+  border-bottom: 1px solid black;
+}
+
+.main_restaurant_restaurant-body_upper {
+  display: flex;
+  font-family: var(--font-family);
+  margin: 1rem 20rem;
+  border-bottom: 1px dashed #d3d3d3;
+}
+
+.main_restaurant_restaurant-body_upper > h3 {
+  margin: 1rem 2rem;
+  display: flex;
+  align-items: center;
+}

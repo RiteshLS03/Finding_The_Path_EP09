@@ -1,7 +1,10 @@
-export const IMG_CDN_LINK = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
+export const IMG_CDN_LINK = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/"
 export const SwiggyAPI_URL = "https://www.swiggy.com/dapi/restaurants/list/v5?&lat=19.8644542&lng=75.3557927";
+export const ITEM_IMG_CDN_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/";
+export const MAIN_Restaurnat_API_URL = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=19.8761653&lng=75.3433139&restaurantId="
 
-export const restaurantList = []
+
+// export const restaurantList = []
 //  [
 //     {
 //       cardType: "restaurant",
