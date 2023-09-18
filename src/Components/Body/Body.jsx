@@ -2,6 +2,7 @@ import { useEffect,useState } from "react";
 import { RestaurantCard , ShimmarUI} from "../Index";
 import { SwiggyAPI_URL } from "../config.js";
 import "./Body.css"
+import { Link } from "react-router-dom";
 
 
 function Body () {
@@ -34,10 +35,10 @@ function Body () {
           let checkData = json?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle?.restaurants
           if(checkData !== undefined){
             return checkData;
+
           }
         }
       }
-
       const resData = await checkJsonData(json);
       setAllRestaurants(resData);
       setFilteredRestaurants(resData);
@@ -46,11 +47,10 @@ function Body () {
       console.log(error)
     }
   } 
-  // if(!allRestaurants) return null;
   const allRestaurantslength = allRestaurants.length
 
   return(
-  (
+  (<>
       <div className="container">
         <div className="search-nav">
           <input
@@ -66,6 +66,7 @@ function Body () {
             onClick={() => {
               // need to filter the data
               const data = filterData(searchText, allRestaurants);
+              // and set it to the hook
               setFilteredRestaurants(data);
             }}
           >
@@ -76,18 +77,21 @@ function Body () {
         {/* CARDS */}
       <div className="cards">
         {  
-     (allRestaurantslength === 0) ? <ShimmarUI /> : filteredRestaurants?.map((restaurant) => 
+     (allRestaurantslength === 0) ?
+      <ShimmarUI /> : 
+      filteredRestaurants?.map((restaurant) => 
          {
-           return (
-              (
-              <div className="body-rest">
-              <RestaurantCard restaurant={...restaurant} key={restaurant?.info?.id} />
+           return ( 
+            <Link style={{ "textDecoration": "none", "color":"inherit" }} to={"/restaurant/"+restaurant?.info?.id} key={restaurant?.info?.id}>
+              <div className="body-rest" >
+              <RestaurantCard  restaurant={...restaurant}  />
               </div>
-           ) 
+            </Link>
            )
           })}
       </div>
     </div> 
+    </>
     ))
   }
 

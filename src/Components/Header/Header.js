@@ -40,9 +40,9 @@ function Header () {
         </div> */}
         {/* NAVBAR */}
         <li className="nav-items">
-          <ul><Link to="/">Home</Link> </ul>
+          <ul><Link style={{ "textDecoration": "none", "color":"inherit" }} to="/">Home</Link> </ul>
           <ul>Food</ul>
-          <ul><Link to="/about">About</Link></ul>
+          <ul><Link style={{ "textDecoration": "none", "color":"inherit" }} to="/about">About</Link></ul>
           <ul>
             <a href="">
               <img src={vector} alt="cart" />
