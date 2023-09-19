@@ -4,7 +4,7 @@ import { MAIN_Restaurnat_API_URL } from "../config";
 import { AiFillStar } from "react-icons/ai";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { HiOutlineCurrencyRupee } from "react-icons/hi";
-import MAINRESSHIMMAR from "../MainRestaurantShimmarUI/MAINRESSHIMMAR";
+import MAINRESSHIMMAR from "./MainRestaurantShimmarUI/MAINRESSHIMMAR";
 
 import "./MainRestaurant.css";
 
@@ -24,12 +24,13 @@ const MainRestaurant = () => {
     const json = await data.json();
     setRestaurant(json);
   }
+  
+  console.log(restaurant)
 
   const [listOfRes, setListOfRes] = useState([]);
   async function listOfRes2() {
-    const listOfRestaurants = await restaurant?.data?.cards[2]?.groupedCard
-      ?.cardGroupMap?.REGULAR?.cards;
-    setListOfRes(listOfRestaurants);
+    const listOfRestaurants =  await (restaurant?.data)
+    console.log(listOfRestaurants);
   }
 
   return restaurant.length === 0 ? (
@@ -77,11 +78,19 @@ const MainRestaurant = () => {
           </h3>
         </div>
       </div>
+      {/* Div for the lists */}
       <div className="main_restaurant_restaurant-lists">
-        {console.log(Object.values(restaurant))}
-        {console.log(Object.values(listOfRes))}
-{        console.log(Object.values(restaurant[1]?.cards[2].groupedCard?.cardGroupMap?.REGULAR?.cards))
-}      </div>
+        {/* {        console.log(restaurant)} */}
+        {/* {console.log(Object.values(listOfRes))} */}
+        {/* {
+          Object.values(Object.values(listOfRes)).map(item=>{
+            
+            <h4 key={item.id}>{item.name}</h4>
+          })
+        } */}
+        {/* {        console.log(Object.values(restaurant[1]?.cards[2].groupedCard?.cardGroupMap?.REGULAR?.cards)) */}
+        {/* {console.log(lists)} */}
+      </div>
       {/*  */}
     </>
   );
