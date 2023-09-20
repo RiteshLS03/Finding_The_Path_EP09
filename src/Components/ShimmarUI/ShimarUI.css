@@ -7,7 +7,7 @@ body {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin: auto 6rem;
+  margin: auto 2rem;
 }
 
 .card {
@@ -21,8 +21,8 @@ body {
   width: 250px;
   margin: 40px auto;
   /* display: flex; */
-  /* justify-content: space-around;
-  flex-wrap: wrap; */
+  /* justify-content: space-around; */
+  flex-wrap: wrap; 
 }
 
 .shimmerBG {

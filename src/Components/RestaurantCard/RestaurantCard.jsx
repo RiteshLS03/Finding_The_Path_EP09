@@ -16,8 +16,10 @@ function RestaurantCard({ restaurant }) {
       {/*image*/}
       <div className="cardinfo">
         <h4 className="cardinfo_name">{name}</h4> {/*restaurantName*/}
+        <div className="restaurant_price-rating">
         <h3>{costForTwo}</h3> {/*price */}
         <h3 className="cardinfo_ratings"><AiFillStar />{avgRatingString}</h3>{/*  */}
+        </div>
         <h3 className="cardinfo_cuisines">{cuisines.join(", ")}</h3> {/* cuisines */}
       </div>
     </div>
