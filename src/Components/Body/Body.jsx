@@ -13,7 +13,7 @@ function Body () {
     return filterData
   }
   
-  const [allRestaurants , setAllRestaurants] = useState([]);
+  const [allRestaurants , setAllRestaurants] = useState(null);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState(""); //useState is a function that return an array. First Element is state varible and second element is function that how we want to change the state
 
@@ -28,7 +28,7 @@ function Body () {
     try {
       const response = await fetch(SwiggyAPI_URL);
       const json = await response.json();
-
+console.log(json);
       async function checkJsonData(jsondata){
         for(i=0;i < jsondata?.data?.cards.length; i++){
 
@@ -47,7 +47,6 @@ function Body () {
       console.log(error)
     }
   } 
-  const allRestaurantslength = allRestaurants.length
 
   return(
   (<>
@@ -77,8 +76,8 @@ function Body () {
         {/* CARDS */}
       <div className="cards">
         {  
-     (allRestaurantslength === 0) ?
-      <ShimmarUI /> : 
+ !allRestaurants ?
+      <ShimmarUI /> :
       filteredRestaurants?.map((restaurant) => 
          {
            return ( 
@@ -91,7 +90,7 @@ function Body () {
           })}
       </div>
     </div> 
-    </>
+{    console.log(useState()) }    </>
     ))
   }
 
